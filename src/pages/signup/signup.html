@@ -1,0 +1,57 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cadastra-se</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        Nome Completo
+      </ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        Email
+      </ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>
+        Senha
+      </ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        Repetir Senha
+      </ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label center text-center> Desejo Receber prazo de 
+        validade das conta.</ion-label>
+      <ion-toggle disabled checked=""></ion-toggle>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col center text-center>
+          <button ion-button color="sucess" (click)="toGoTabsPage()">Cadastra-se</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-list>
+
+
+</ion-content>
