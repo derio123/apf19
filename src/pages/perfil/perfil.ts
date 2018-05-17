@@ -11,12 +11,12 @@ import { ContasPage } from '../contas/contas';
   templateUrl: 'perfil.html',
 })
 export class PerfilPage {
-  rootPage = PerfilPage;
+  //rootPage = PerfilPage;
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  abrirContas(){
+  /*abrirContas(){
     this.navCtrl.push(ContasPage)
   }
   abrirPesquisa(){
@@ -24,4 +24,4 @@ export class PerfilPage {
   }
   abrirSair(){
     this.navCtrl.push(SairPage)
-  }}
+  }*/}

@@ -1,14 +1,16 @@
 <ion-header>
   <ion-navbar>
-    <ion-title center >APFinanças </ion-title>
+    <ion-title center>APFinanças </ion-title>
     <ion-buttons start>
-      <button ion-button icon-only>
+      <!--<button ion-button icon-only>
         <ion-icon name="search"></ion-icon>
-      </button>
+      </button>-->
+      <button ion-button color="energy">Sair</button>
     </ion-buttons>
-        <button ion-button icon-only menuToggle>
-          <ion-icon name="menu"></ion-icon>
-        </button>
+    <button ion-button color="energy" icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
   </ion-navbar>
 </ion-header>
 
@@ -16,7 +18,7 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar>
-    
+      <ion-title center>APFinanças </ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
@@ -25,9 +27,9 @@
         <!--Abrir o item de conta-->
         Contas
       </button>
-      <!--<button ion-item (click)="OpenContact()">
-          Contatos
-        </button>-->
+      <button ion-item (click)="OpenPerfil()">
+          Perfil
+        </button>
       <button ion-item (click)="OpenSair()">
         Sair
       </button>

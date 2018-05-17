@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { TabsPage } from '../tabs/tabs';
+import { usuario } from '../../models/usuario';
+
+//pagina importada
+import { AngularFireAuth} from "angularfire2/auth";
+import { LoginPage } from '../login/login';
 
 @IonicPage()
 @Component({
@@ -8,13 +12,24 @@ import { TabsPage } from '../tabs/tabs';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
+  usuario = {} as usuario;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    private afAuth: AngularFireAuth,
+    public navCtrl: NavController,
+     public navParams: NavParams) {
   }
 
   //ionViewDidLoad() {
   //console.log('ionViewDidLoad SignupPage');
   //}
-  toGoTabsPage() {
-    this.navCtrl.push(TabsPage);
-  }}
+  
+  async cadastro(usuario: usuario){
+    try{
+   const result = await this.afAuth.auth.createUserWithEmailAndPassword( usuario.email, usuario.senha);
+   if (result) {
+    this.navCtrl.push(LoginPage);
+}}
+catch(e){
+    console.error(e);
+}}}

@@ -10,17 +10,24 @@
   <ion-list>
 
     <ion-item>
-      <ion-label>Email</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.email"></ion-input>
     </ion-item>
   
     <ion-item>
-      <ion-label>Senha</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-label floating>Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="usuario.senha"></ion-input>
     </ion-item>
   
   </ion-list>
 
-    <button ion-button color="sucess" (click)="toGoTabsPage()">Login</button>
+  <ion-grid>
+      <ion-row>
+        <ion-col center text-center>
+            <button ion-button color="sucess" (click)="login(usuario)">Login</button>
+            <p> Não tem cadastro! <a color="energy" (click)="cadastro()">Cadastra-se aqui</a></p>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
 
 </ion-content>

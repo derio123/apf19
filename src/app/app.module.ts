@@ -15,11 +15,16 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { PerfilPageModule } from '../pages/perfil/perfil.module';
-import { PesquisaPageModule } from '../pages/pesquisa/pesquisa.module';
-import { SairPageModule } from '../pages/sair/sair.module';
+//import { PesquisaPageModule } from '../pages/pesquisa/pesquisa.module';
+
 import { AlertasPage } from '../pages/alertas/alertas';
 import { ContasPage } from '../pages/contas/contas';
 import { PainelPage } from '../pages/painel/painel';
+
+//Paginas importadas conexões com BD
+import { AngularFireModule} from "angularfire2";
+import { AngularFireAuthModule } from "angularfire2/auth";
+import { FIREBASE_CONFIG } from './app.firebase.config';
 
 @NgModule({
   declarations: [
@@ -27,7 +32,7 @@ import { PainelPage } from '../pages/painel/painel';
     AboutPage,
     HomePage,
     PainelPage,
-    AlertasPage,
+    AlertasPage,           
     ContasPage,
     WelcomePage,
     SignupPage,
@@ -37,10 +42,13 @@ import { PainelPage } from '../pages/painel/painel';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+
+    //Modulo do AngularFire, para conectar ao firebase
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireAuthModule,
+
      //Importando o módulo das paginas
-     PerfilPageModule,
-     PesquisaPageModule,
-     SairPageModule
+     PerfilPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
