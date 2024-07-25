@@ -22,9 +22,10 @@ import { ContasPage } from '../pages/contas/contas';
 import { PainelPage } from '../pages/painel/painel';
 
 //Paginas importadas conexões com BD
-import { AngularFireModule} from "angularfire2";
+import { AngularFireModule } from "angularfire2";
 import { AngularFireAuthModule } from "angularfire2/auth";
 import { FIREBASE_CONFIG } from './app.firebase.config';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
     AboutPage,
     HomePage,
     PainelPage,
-    AlertasPage,           
+    AlertasPage,
     ContasPage,
     WelcomePage,
     SignupPage,
@@ -47,8 +48,8 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireAuthModule,
 
-     //Importando o módulo das paginas
-     PerfilPageModule
+    //Importando o módulo das paginas
+    PerfilPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -63,10 +64,11 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
     LoginPage,
     TabsPage
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }
