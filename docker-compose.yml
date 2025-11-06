@@ -1,0 +1,14 @@
+services:
+  ionic:
+    container_name: ionic3_app
+    build: .
+    ports:
+      - "8100:8100"     # Ionic Dev Server
+      - "35729:35729"   # Live reload
+      - "53703:53703"   # DevTools (opcional)
+    volumes:
+      - .:/app
+      - /app/node_modules     # Evita sobrescrever node_modules
+    environment:
+      - NODE_ENV=development
+    command: ionic serve --host 0.0.0.0 --port 8100 --no-open --no-interactive
